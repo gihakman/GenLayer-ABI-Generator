@@ -65,6 +65,11 @@ def root():
     return {"status": "ok", "service": "GenLayer ABI Generator v0.1.0"}
 
 
+@app.get("/health")
+def health():
+    return {"status": "healthy", "version": "0.1.0"}
+
+
 @app.post("/api/extract-abi", response_model=ExtractAbiResponse)
 def extract_abi_endpoint(req: ExtractAbiRequest) -> ExtractAbiResponse:
     try:
