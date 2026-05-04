@@ -1,0 +1,22 @@
+{
+  "name": "genlayer-abi-generator",
+  "version": "0.1.0",
+  "description": "Type-Safe Frontend Toolkit for GenLayer Intelligent Contracts",
+  "main": "index.js",
+  "scripts": {
+    "generate": "python -m genlayer_abi.cli generate",
+    "inspect": "python -m genlayer_abi.cli inspect",
+    "api": "python -m uvicorn api.main:app --host 127.0.0.1 --port 8000 --reload",
+    "test": "python -m unittest discover -s tests -p '*_test.py'"
+  },
+  "keywords": [
+    "genlayer",
+    "abi",
+    "typescript",
+    "smart-contracts",
+    "intelligent-contracts",
+    "react-hooks"
+  ],
+  "author": "",
+  "license": "MIT"
+}

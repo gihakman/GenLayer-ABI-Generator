@@ -1,0 +1,39 @@
+{
+  "name": "genlayer-abi-generator",
+  "displayName": "GenLayer ABI Generator",
+  "description": "Generate type-safe ABIs and React hooks from GenLayer Python contracts",
+  "version": "0.1.0",
+  "publisher": "genlayer-community",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "genlayer.generateAbi",
+        "title": "Generate GenLayer ABI",
+        "category": "GenLayer"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "resourceExtname == .py",
+          "command": "genlayer.generateAbi",
+          "group": "9_cutcopypaste@5"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'prepublish'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0"
+  }
+}

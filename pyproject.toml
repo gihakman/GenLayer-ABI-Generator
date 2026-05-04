@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "genlayer-abi-generator"
+version = "0.1.0"
+description = "Type-Safe Frontend Toolkit for GenLayer Intelligent Contracts"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+keywords = ["genlayer", "abi", "typescript", "smart-contracts", "react-hooks"]
+dependencies = [
+    "fastapi>=0.136.0",
+    "uvicorn>=0.46.0",
+    "pydantic>=2.13.0",
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+genlayer = ["genlayer-py>=0.8.1"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+genlayer-abi = "genlayer_abi.cli:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["genlayer_abi"]
