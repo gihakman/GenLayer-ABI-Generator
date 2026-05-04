@@ -33,12 +33,12 @@ python -m genlayer_abi.cli generate tests/contracts/sample.py \
 python -m uvicorn api.main:app --host 127.0.0.1 --port 8000
 ```
 
-Open `http://127.0.0.1:8000`. Paste your contract source. It generates on every keystroke.
+Open `https://genlayer-abi-generator.onrender.com/`. Paste your contract source. It generates on every keystroke.
 
 ### API
 
 ```bash
-curl -X POST http://127.0.0.1:8000/api/generate-ts \
+curl -X POST https://genlayer-abi-generator.onrender.com/api/generate-ts \
   -H "Content-Type: application/json" \
   -d '{"contract_source":"...", "contract_address":"0x..."}'
 ```
